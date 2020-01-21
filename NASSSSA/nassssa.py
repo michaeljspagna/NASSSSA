@@ -22,7 +22,7 @@ def setWallPaper():
         downloadImg(imgReq, imgTitle)
     else:
         imgTitle = '716buffalo.jpg'
-    imgPath = '/Users/michaelspagna/programming/python/NASSSSA/' + imgTitle
+    imgPath = '***YOUR IMAGE PATH***' + imgTitle
     subprocess.Popen(SCRIPT%imgPath, shell=True)
 
 def downloadImg(req, title):
