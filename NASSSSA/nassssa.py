@@ -11,18 +11,19 @@ end tell
 END"""
 
 def setWallPaper():
+    imgTitle = ''
     apiURL = 'https://api.nasa.gov/planetary/apod?api_key=2wsUBSMoZz0gI6yDBDXXCIrcgjzlwkd5EA5vQ1XM'
     apiReq= requests.get(apiURL)
-    imgTitle = ''
 
-    if apiReq:
-        imgURL = apiReq.json()['url']
-        imgReq = requests.get(imgURL)
-        imgTitle = 'NASSSA.jpg'
+    imgURL = apiReq.json()['url']
+    imgReq = requests.get(imgURL)
+    imgTitle = 'NASSSSA.jpg'
+    if not('youtube' in imgTitle):
         downloadImg(imgReq, imgTitle)
     else:
-        imgTitle = '716buffalo.jpg'
-    imgPath = '***YOUR IMAGE PATH***' + imgTitle
+        imgTitle = 'default.jpg'
+        
+    imgPath = '/Users/michaelspagna/programming/python/NASSSSA/' + imgTitle
     subprocess.Popen(SCRIPT%imgPath, shell=True)
 
 def downloadImg(req, title):
