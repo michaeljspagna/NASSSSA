@@ -12,7 +12,7 @@ END"""
 
 def setWallPaper():
     imgTitle = ''
-    apiURL = 'https://api.nasa.gov/planetary/apod?api_key=2wsUBSMoZz0gI6yDBDXXCIrcgjzlwkd5EA5vQ1XM'
+    apiURL = 'https://api.nasa.gov/planetary/apod?api_key=***YOUR_NASA_API_KEY***'
     apiReq= requests.get(apiURL)
 
     imgURL = apiReq.json()['url']
@@ -23,7 +23,7 @@ def setWallPaper():
     else:
         imgTitle = 'default.jpg'
         
-    imgPath = '/Users/michaelspagna/programming/python/NASSSSA/' + imgTitle
+    imgPath = '***YOUR_IMAGE_PATH***' + imgTitle
     subprocess.Popen(SCRIPT%imgPath, shell=True)
 
 def downloadImg(req, title):
